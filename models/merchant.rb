@@ -11,8 +11,8 @@ class Merchant
     @name = params["name"]
   end
   
-
-
-
+  def format_name()
+    @name.capitalize!
+  end
   
 end

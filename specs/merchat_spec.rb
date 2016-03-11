@@ -7,17 +7,23 @@ class MerchantTest < MiniTest::Test
 
   def setup
     params = {
-      "id" => nil,
-      "name" => "tesco"
+      "id" => 1,
+      "name" => "teSCO"
     }
     @merchant = Merchant.new(params)
   end
 
   def test_merchant_can_read_name
-    assert_equal("tesco", @merchant.name)
-  binding.pry
-  nil
+    assert_equal("teSCO", @merchant.name)
   end
 
+  def test_merchant_can_read_id
+    assert_equal(1, @merchant.id)
+  end
+
+  def test_merchant_can_format_name
+    @merchant.format_name()
+    assert_equal("Tesco", @merchant.name)
+  end
 
 end
