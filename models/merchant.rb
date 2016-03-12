@@ -1,6 +1,4 @@
 require("pg")
-require("pry")
-
 
 class Merchant
 
@@ -11,8 +9,10 @@ class Merchant
     @name = params["name"]
   end
   
-  def format_name()
+  def format()
     @name.capitalize!
   end
   
+
+
 end

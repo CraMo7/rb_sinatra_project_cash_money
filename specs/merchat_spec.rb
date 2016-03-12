@@ -22,7 +22,7 @@ class MerchantTest < MiniTest::Test
   end
 
   def test_merchant_can_format_name
-    @merchant.format_name()
+    @merchant.format()
     assert_equal("Tesco", @merchant.name)
   end
 
