@@ -1,6 +1,6 @@
 require("pg")
 
-class Details
+class Detail
 
   attr_reader(:id, :description, :amount)
 

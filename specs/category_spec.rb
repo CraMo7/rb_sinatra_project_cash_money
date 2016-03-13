@@ -6,7 +6,7 @@ class CategoryTest < MiniTest::Test
 
   def setup
     params = {
-      "id" => nil,
+      "id" => 1,
       "name" => "foOD",
     }
     @category = Category.new(params)
@@ -17,7 +17,7 @@ class CategoryTest < MiniTest::Test
   end
 
   def test_category_can_read_id
-    assert_equal(nil, @category.id)
+    assert_equal(1, @category.id)
   end
 
   def test_category_can_format_name

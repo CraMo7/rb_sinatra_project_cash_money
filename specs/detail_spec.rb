@@ -2,7 +2,7 @@ require("minitest/autorun")
 require("minitest/rg")
 require_relative("../models/details.rb") 
 
-class DetailsTest < MiniTest::Test
+class DetailTest < MiniTest::Test
 
   def setup
     params = {
@@ -10,7 +10,7 @@ class DetailsTest < MiniTest::Test
       "description" => "i bought this thing",
       "amount" => 10.00,
     }
-    @details = Details.new(params)
+    @details = Detail.new(params)
   end
 
   def test_details_can_read_id
