@@ -20,11 +20,20 @@ class TransactionTest < MiniTest::Test
   end
 
   def test_transaction_can_read_description
-    assert_equal("i bought this thing", @transaction.description)
+    assert_equal("i bought this food at tesco for a tenner, but that should be obvious", @transaction.description)
   end
 
   def test_transaction_can_read_amount
     assert_equal(10.00, @transaction.amount)
   end
+
+  def test_transaction_can_calc_total
+    assert_equal(360.00, Transaction.total)
+  end
+
+  def test_transaction_can_calc_total_by_category
+    assert_equal(100.00, Transaction.total_tagged(2))
+  end
+
 
 end

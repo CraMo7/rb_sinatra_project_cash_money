@@ -30,15 +30,17 @@ class Transaction
     #end
   end
 
-  def self.total_spend
+  def self.total
     #will this work as is? add @total = 0 before and return @total after?
-    Transaction.all().each {|tranaction| @total += transaction.amount}
+    @total = 0
+    Transaction.all().each {|transaction| @total += transaction.amount}
     return @total
   end
 
-  def self.spend_tagged(category_id)
-    return Transaction.all_tagged(category_id).each {|transaction| @total_tagged += transaction.amount}
-    
+  def self.total_tagged(category_id)
+    @total_tagged = 0
+    Transaction.all_tagged(category_id).each {|transaction| @total_tagged += transaction.amount}
+    return @total_tagged
   end
 
 
@@ -71,8 +73,5 @@ class Transaction
   def save
     
   end
-  
-
-  Transaction.total_spend()
   
 end

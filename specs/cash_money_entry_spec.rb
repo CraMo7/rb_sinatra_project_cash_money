@@ -20,17 +20,17 @@ class CashMoneyEntryTest < MiniTest::Test
     }
     @category = Category.new(category_params)
 
-    detail_params = {
+    transaction_params = {
       "id" => 1,
       "description" => "i bought this thing",
       "amount" => 10.00,
     }
-    @detail = Detail.new(detail_params)
+    @transaction = Transaction.new(transaction_params)
 
     params = {
       "merchant" => @merchant,
       "category" => @category,
-      "detail" => @detail
+      "transaction" => @transaction
     }
     @cash_money_entry = CashMoneyEntry.new(params)
   end
@@ -43,8 +43,8 @@ class CashMoneyEntryTest < MiniTest::Test
     assert_equal(Category, @category.class)
   end
 
-  def test_cash_money_entry_contains_detail_object
-    assert_equal(Detail, @detail.class)
+  def test_cash_money_entry_contains_transaction_object
+    assert_equal(Transaction, @transaction.class)
   end
 
 end

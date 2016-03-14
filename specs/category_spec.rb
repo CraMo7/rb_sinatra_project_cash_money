@@ -13,16 +13,11 @@ class CategoryTest < MiniTest::Test
   end
 
   def test_category_can_read_name
-    assert_equal("foOD", @category.name)
+    assert_equal("Food", @category.name)
   end
 
   def test_category_can_read_id
     assert_equal(1, @category.id)
-  end
-
-  def test_category_can_format_name
-    @category.format()
-    assert_equal("Food", @category.name)
   end
 
 end

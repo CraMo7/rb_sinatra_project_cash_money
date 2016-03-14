@@ -14,16 +14,11 @@ class MerchantTest < MiniTest::Test
   end
 
   def test_merchant_can_read_name
-    assert_equal("teSCO", @merchant.name)
+    assert_equal("Tesco", @merchant.name)
   end
 
   def test_merchant_can_read_id
     assert_equal(1, @merchant.id)
-  end
-
-  def test_merchant_can_format_name
-    @merchant.format()
-    assert_equal("Tesco", @merchant.name)
   end
 
 end
