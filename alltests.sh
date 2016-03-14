@@ -1,1 +1,0 @@
-for file in specs/*.rb; do echo "#########################"; echo $file; ruby $file; echo $file; echo "#########################"; done

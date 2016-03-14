@@ -7,7 +7,7 @@ class TransactionTest < MiniTest::Test
   def setup
     params = {
       "id" => 1,
-      "description" => "i bought this thing",
+      "description" => "i bought this food at tesco for a tenner, but that should be obvious",
       "amount" => 10.00,
       "merchant_id" => 1,
       "category_id" => 1,
