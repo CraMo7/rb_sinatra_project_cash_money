@@ -1,15 +1,17 @@
-require("pry")
+
+require("pg")
 
 class Transaction
 
-  attr_reader(:id, :merchant, :category, :details)
+  attr_reader(:id, :description, :amount, :)
 
   def initialize(params)
     @id = params["id"]
-    @merchant = params["merchant"]
-    @category = params["category"]
-    @detail = params["detail"]
+    @description = params["description"]
+    @amount = params["amount"]
+    @
   end
+
 
   def self.all_tagged(category)
     
@@ -37,7 +39,6 @@ class Transaction
   def save
     
   end
-
   
   
 end

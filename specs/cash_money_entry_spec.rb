@@ -1,11 +1,11 @@
 require("minitest/autorun")
 require("minitest/rg")
-require_relative("../models/transaction.rb")
 require_relative("../models/merchant.rb")
 require_relative("../models/category.rb")
-require_relative("../models/detail.rb")
+require_relative("../models/transaction.rb")
+require_relative("../models/cash_money_entry.rb")
 
-class TransactionTest < MiniTest::Test
+class CashMoneyEntryTest < MiniTest::Test
 
   def setup
     merchant_params = {
@@ -32,18 +32,18 @@ class TransactionTest < MiniTest::Test
       "category" => @category,
       "detail" => @detail
     }
-    @transaction = Transaction.new(params)
+    @cash_money_entry = CashMoneyEntry.new(params)
   end
 
-  def test_transaction_contains_merchant_object
+  def test_cash_money_entry_contains_merchant_object
     assert_equal(Merchant, @merchant.class)
   end
 
-  def test_transaction_contains_category_object
+  def test_cash_money_entry_contains_category_object
     assert_equal(Category, @category.class)
   end
 
-  def test_transaction_contains_detail_object
+  def test_cash_money_entry_contains_detail_object
     assert_equal(Detail, @detail.class)
   end
 
