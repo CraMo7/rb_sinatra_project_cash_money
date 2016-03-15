@@ -5,8 +5,14 @@ class Category
   attr_reader(:id, :name)
 
   def initialize(params)
-    @id = nil || params["id"]
+    @id = params["id"].to_i if params["id"]
     @name = params["name"].capitalize!
+  end
+
+  def self.find(id)
+    query = "SELECT * FROM categories WHERE id=#{id};"
+    sql_return = Sql.run(query)
+    return Category.new(sql_return[0])
   end
   
   #adds object to db - adds db id to object

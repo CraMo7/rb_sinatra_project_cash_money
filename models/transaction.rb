@@ -1,4 +1,7 @@
 require_relative("../db/sql.rb")
+require_relative("../models/category.rb") 
+require_relative("../models/merchant.rb") 
+
 require("pry")
 
 class Transaction
@@ -6,11 +9,25 @@ class Transaction
   attr_reader(:id, :description, :amount, :merchant_id, :category_id)
 
   def initialize(params)
-    @id = nil || params["id"]
+    @id = params["id"].to_i if params["id"]
     @description = params["description"]
     @amount = params["amount"].to_f
     @merchant_id = params["merchant_id"]
     @category_id =  params["category_id"]
+  end
+
+  def merchant
+    Merchant.find(@merchant_id)   
+  end
+
+  def category
+    Category.find(@category_id)    
+  end
+
+  def self.find(id)
+    query = "SELECT * FROM transactions WHERE id=#{id};"
+    sql_return = Sql.run(query)
+    return Transaction.new(sql_return[0])
   end
 
   #adds object to db - adds db id to object
@@ -30,8 +47,12 @@ class Transaction
     #end
   end
 
+  def full()
+
+    
+  end
+
   def self.total
-    #will this work as is? add @total = 0 before and return @total after?
     @total = 0
     Transaction.all().each {|transaction| @total += transaction.amount}
     return @total
@@ -57,18 +78,18 @@ class Transaction
   end
 
 
-  def create_json
-    @tranaction_full_hash = {
-      "merchant_id" => @merchant.id.to_s,
-      "merchant_name" => @merchant.name.to_s,
-      "category_id" => @category.id.to_s,
-      "category_name" => @category.name.to_s,
-      "detail_id" => @detail.id.to_s,
-      "detail_description" => @detail.description.to_s,
-      "detail_amount" => @detail.amount.to_s
-    }
+  # def create_json
+  #   @tranaction_full_hash = {
+  #     "merchant_id" => @merchant.id.to_s,
+  #     "merchant_name" => @merchant.name.to_s,
+  #     "category_id" => @category.id.to_s,
+  #     "category_name" => @category.name.to_s,
+  #     "detail_id" => @detail.id.to_s,
+  #     "detail_description" => @detail.description.to_s,
+  #     "detail_amount" => @detail.amount.to_s
+  #   }
     
-  end
+  # end
 
   def save
     

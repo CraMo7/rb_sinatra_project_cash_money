@@ -5,14 +5,7 @@ require_relative("../models/transaction.rb")
 class TransactionTest < MiniTest::Test
 
   def setup
-    params = {
-      "id" => 1,
-      "description" => "i bought this food at tesco for a tenner, but that should be obvious",
-      "amount" => 10.00,
-      "merchant_id" => 1,
-      "category_id" => 1,
-    }
-    @transaction = Transaction.new(params)
+    @transaction = Transaction.all.first
   end
 
   def test_transaction_can_read_id
@@ -20,7 +13,7 @@ class TransactionTest < MiniTest::Test
   end
 
   def test_transaction_can_read_description
-    assert_equal("i bought this food at tesco for a tenner, but that should be obvious", @transaction.description)
+    assert_equal("i bought some food at tesco for a tenner, but that should be obvious", @transaction.description)
   end
 
   def test_transaction_can_read_amount
@@ -33,6 +26,15 @@ class TransactionTest < MiniTest::Test
 
   def test_transaction_can_calc_total_by_category
     assert_equal(100.00, Transaction.total_tagged(2))
+  end
+
+  def test_transaction_can_find_merchant
+    assert_equal(1, @transaction.merchant.id)
+  end
+
+  def test_transaction_can_find_category
+    assert_equal(1, @transaction.category.id)
+    
   end
 
 
