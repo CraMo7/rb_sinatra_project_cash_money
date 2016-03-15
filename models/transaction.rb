@@ -55,6 +55,7 @@ class Transaction
     return sql_return.map {|transaction_params| Transaction.new(transaction_params)}
   end
 
+  #not needed anymore - filtering can be done in analysis model
   def self.all_tagged(category_id)
     query = "SELECT * FROM transactions WHERE category_id=#{category_id};"
     sql_return = Sql.run(query)

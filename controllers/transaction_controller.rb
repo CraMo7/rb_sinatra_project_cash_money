@@ -2,30 +2,32 @@ require_relative("../models/transaction.rb")
 
 
 
-# get("/categories/new") do
+# get("/transactions/new") do
 #   # REST action "NEW"
 # end
 
-# post("/categories") do
+# post("/transactions") do
 #  # REST action "CREATE"
 # end
 
-# get("/categories") do
-#   #REST action "INDEX"
-# end
+get("/transactions/?") do
+  #REST action "INDEX"
+  @transactions = Transaction.all
+  erb(:"transaction/index")
+end
 
-# get("/categories/:id") do
-#   # REST action "SHOW"
-# end
+get("/transactions/:id") do
+  # REST action "SHOW"
+end
 
-# get("categories/:id/edit") do
+# get("transactions/:id/edit") do
 #   # REST action "EDIT"
 # end
 
-# put("/categories/:id") do
+# put("/transactions/:id") do
 #   # REST action "UPDATE"
 # end
 
-# delete("categories/:id") do
+# delete("transactions/:id") do
 #   # REST action DESTROY
 # end

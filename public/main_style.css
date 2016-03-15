@@ -1,0 +1,25 @@
+a {
+  text-decoration: none;
+  color: #A0A;
+}
+
+h2 {
+  color: #0F0;
+}
+
+h3 {
+  color: #00F;
+}
+
+.content {
+  width: 90%;
+}
+
+td.total_label {
+  text-align: right;
+  padding: 3px;
+}
+
+td.total_display {
+  padding: 3px;
+}
