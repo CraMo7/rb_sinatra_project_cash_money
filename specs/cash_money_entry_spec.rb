@@ -35,16 +35,4 @@ class CashMoneyEntryTest < MiniTest::Test
     @cash_money_entry = CashMoneyEntry.new(params)
   end
 
-  def test_cash_money_entry_contains_merchant_object
-    assert_equal(Merchant, @merchant.class)
-  end
-
-  def test_cash_money_entry_contains_category_object
-    assert_equal(Category, @category.class)
-  end
-
-  def test_cash_money_entry_contains_transaction_object
-    assert_equal(Transaction, @transaction.class)
-  end
-
 end

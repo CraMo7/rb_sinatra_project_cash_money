@@ -20,14 +20,6 @@ class TransactionTest < MiniTest::Test
     assert_equal(10.00, @transaction.amount)
   end
 
-  def test_transaction_can_calc_total
-    assert_equal(360.00, Transaction.total)
-  end
-
-  def test_transaction_can_calc_total_by_category
-    assert_equal(100.00, Transaction.total_tagged(2))
-  end
-
   def test_transaction_can_find_merchant
     assert_equal(1, @transaction.merchant.id)
   end

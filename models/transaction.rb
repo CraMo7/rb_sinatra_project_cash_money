@@ -47,22 +47,6 @@ class Transaction
     #end
   end
 
-  def full()
-
-    
-  end
-
-  def self.total
-    @total = 0
-    Transaction.all().each {|transaction| @total += transaction.amount}
-    return @total
-  end
-
-  def self.total_tagged(category_id)
-    @total_tagged = 0
-    Transaction.all_tagged(category_id).each {|transaction| @total_tagged += transaction.amount}
-    return @total_tagged
-  end
 
 
   def self.all

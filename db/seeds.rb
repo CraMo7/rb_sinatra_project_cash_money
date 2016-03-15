@@ -20,7 +20,7 @@ merchant7 = Merchant.create({"name" => "google play store"})
 
 transaction1 = Transaction.create({"description" => "i bought some food at tesco for a tenner, but that should be obvious", "amount" => 10.00, "merchant_id" => 1, "category_id" => 1})
 transaction2 = Transaction.create({"description" => "i bought a round at wetherspoons, it cost twenty quid, but that should be obvious", "amount" => 20.00, "merchant_id" => 4, "category_id" => 2})
-transaction3 = Transaction.create({"description" => "i bought two tickets to a 3D movie, popcorn and drinks. 30 quid? I bet that shit costs them 30p! But that should be obvious", "amount" => 30.00, "merchant_id" => 1, "category_id" => 4})
+transaction3 = Transaction.create({"description" => "i bought two tickets to a 3D movie, popcorn and drinks. 30 quid? I bet that shit costs them 30p! But that should be obvious", "amount" => 30.00, "merchant_id" => 1, "category_id" => 3})
 transaction4 = Transaction.create({"description" => "i bought an ipod charger at an apple store, 40 fuckin quid!? Bloody chancers. But that should be obvious", "amount" => 40.00, "merchant_id" => 6, "category_id" => 6})
 transaction5 = Transaction.create({"description" => "i bought some EA games for my phone, wow, £50? This is why I need this app, but that should be obvious", "amount" => 50.00, "merchant_id" => 7, "category_id" => 7})
 transaction6 = Transaction.create({"description" => "i bought a case for my phone at currys, samsung are as bad as apple! but that should be obvious", "amount" => 60.00, "merchant_id" => 3, "category_id" => 6})
