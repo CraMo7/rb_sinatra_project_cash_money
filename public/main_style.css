@@ -1,3 +1,9 @@
+html {
+  background: url(/monochrome_money.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+}
+
 a {
   text-decoration: none;
   color: #A0A;
@@ -11,9 +17,41 @@ h3 {
   color: #00F;
 }
 
-.content {
+/*original "dollar green colour: #85bb65*/
+/* light: #8cbb65*/
+/*deep brighter: #6ba449*/
+/*deep dark: #486f31*/
+/*nearing black: #314c21*/
+
+.table {
   width: 90%;
+  margin: 2.5% 5%;
+  background-color: #8cbb65;
 }
+thead {
+  border: 2px solid #A0A;
+  border-bottom: none;
+}
+
+thead, thead a {
+  color: #314c21;
+}
+
+tbody {
+  border: 2px solid black;
+  border-top: none;
+}
+
+tbody, tbody a {
+  color: #314c21;
+}
+
+th, td {
+  border: 1px solid grey;
+  padding: 2px;
+  text-align: center;
+}
+
 
 td.total_label {
   text-align: right;
@@ -22,4 +60,8 @@ td.total_label {
 
 td.total_display {
   padding: 3px;
+}
+
+.table {
+  background-color: ;
 }

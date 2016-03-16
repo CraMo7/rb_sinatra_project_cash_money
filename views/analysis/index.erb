@@ -1,17 +1,17 @@
-<table class="">
+<table class="table">
   <thead>
     <tr>
-      <th>Category</th>
-      <th>Merchant</th>
+      <th><a href="/analyses/?sort=category&order=<%= @sort_order %>">Category</th>
+      <th><a href="/analyses/?sort=merchant&order=<%= @sort_order %>">Merchant</th>
       <th>Transaction</th>
-      <th>Amount</th>
+      <th><a href="/analyses/?sort=amount&order=<%= @sort_order %>">Amount</a></th>
     </tr>
   </thead>
   <tbody>
     <% @analysis.transactions.each do |transaction| %>
     <tr>
-        <td><a href="/transactions/<%= transaction.category.id %>"><%= transaction.category.name %></a></td>
-        <td><a href="/transactions/<%= transaction.merchant.id %>"><%= transaction.merchant.name %></a></td>
+        <td><a href="/categories/<%= transaction.category.id %>"><%= transaction.category.name %></a></td>
+        <td><a href="/merchants/<%= transaction.merchant.id %>"><%= transaction.merchant.name %></a></td>
         <td><a href="/transactions/<%= transaction.id %>"><%= transaction.description %></a></td>
         <td><a href="/transactions/<%= transaction.id %>"><%= transaction.amount %></a></td>
     </tr>    

@@ -10,8 +10,8 @@
   <tbody>
     <% @transactions.each do |transaction| %>
     <tr>
-        <td><a href="/transactions/<%= transaction.id %>"><%= transaction.category.name %></a></td>
-        <td><a href="/transactions/<%= transaction.id %>"><%= transaction.merchant.name %></a></td>
+        <td><a href="/categories/<%= transaction.category.id %>"><%= transaction.category.name %></a></td>
+        <td><a href="/merchants/<%= transaction.merchant.id %>"><%= transaction.merchant.name %></a></td>
         <td><a href="/transactions/<%= transaction.id %>"><%= transaction.description %></a></td>
         <td><a href="/transactions/<%= transaction.id %>"><%= transaction.amount %></a></td>
     </tr>    

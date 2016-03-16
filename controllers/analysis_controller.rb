@@ -13,6 +13,16 @@ require_relative("../models/analysis.rb")
 get("/analyses/?") do
   #REST action "INDEX"
   @analysis = Analysis.new(transactions_array: Transaction.all(), merchants_array: Merchant.all(), categories: Category.all())
+
+
+  # @analysis.sort(params["sort"])
+  @sort_order = "asc"
+  @sort_order = "desc" if params["order"] == "asc"
+  
+  @analysis.sort_amount(@sort_order) if params["sort"] == "amount"
+  @analysis.sort_merchant(@sort_order) if params["sort"] == "merchant"
+  @analysis.sort_category(@sort_order) if params["sort"] == "category"
+
   erb(:"analysis/index")
 end
 
