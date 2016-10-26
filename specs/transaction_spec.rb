@@ -13,7 +13,7 @@ class TransactionTest < MiniTest::Test
   end
 
   def test_transaction_can_read_description
-    assert_equal("i bought some food at tesco for a tenner, but that should be obvious", @transaction.description)
+    assert_equal("I bought some food at tesco for a tenner, but that should be obvious", @transaction.description)
   end
 
   def test_transaction_can_read_amount

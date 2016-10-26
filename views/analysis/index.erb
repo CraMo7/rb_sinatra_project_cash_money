@@ -1,10 +1,12 @@
+<div class="box">
 <table class="table">
   <thead>
     <tr>
-      <th><a href="/analyses/?sort=category&order=<%= @sort_order %>">Category</th>
-      <th><a href="/analyses/?sort=merchant&order=<%= @sort_order %>">Merchant</th>
+      <th><span title="Sort by Category"><a href="/analyses/?sort_by=category&order=<%= @sort_order %>">Category</a></span></th>
+      <th><span title="Sort by Category"><a href="/analyses/?sort_by=merchant&order=<%= @sort_order %>">Merchant</a></span></th>
       <th>Transaction</th>
-      <th><a href="/analyses/?sort=amount&order=<%= @sort_order %>">Amount</a></th>
+      <th><span title="Sort by Category"><a href="/analyses/?sort_by=amount&order=<%= @sort_order %>">Amount</a></span></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,13 +16,21 @@
         <td><a href="/merchants/<%= transaction.merchant.id %>"><%= transaction.merchant.name %></a></td>
         <td><a href="/transactions/<%= transaction.id %>"><%= transaction.description %></a></td>
         <td><a href="/transactions/<%= transaction.id %>"><%= transaction.amount %></a></td>
+        <td>
+          <span title="Edit Transaction"><a href="/transactions/<%= transaction.id %>/edit"><img class="icon" src="/edit_pencil.ico" alt="edit"></a></span>
+          <span title="Delete Transaction"><a href="/transactions/<%= transaction.id %>/edit"><img class="icon" src="/delete_trashcan.png" alt="delete"></a></span>
+        </td>
     </tr>    
     <% end %>
-    <tr>
-      <td></td>
-      <td></td>
-      <td class="total_label">Total:</td>
-      <td class="total_display"><%= @analysis.total %></td>
-    </tr>
   </tbody>
+  <tfoot>
+  <tr>
+    <td class="add_transaction"><span title="Add Transaction"><a href="/transactions/new"><img class="icon" src="/add_plus.png" alt="+"></a></span></td>
+    <td class="empty_cell" visibility="hidden"></td>
+    <td class="total" id="total_label">Total:</td>
+    <td class="total" id="total_display"><%= @analysis.total %></td>
+  </tr>
+
+  </tfoot>
 </table>
+</div>

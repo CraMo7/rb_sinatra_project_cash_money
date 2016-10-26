@@ -1,5 +1,3 @@
-require("pry")
-
 class Analysis
 
   attr_reader(:transactions, :merchants, :categories)
@@ -18,20 +16,56 @@ class Analysis
 
   # end
 
-  def sort_amount(order)
-    @transactions.sort! { |t1, t2| t1.amount <=> t2.amount} if order == "asc"
-    @transactions.sort! { |t1, t2| t2.amount <=> t1.amount} if order == "desc"
+  def json_hash
+    json_hash = { transactions: {}, merchants: {}, categories: {} }
+    count = 1
+    @transactions.each do |t|
+      json_hash[:transactions]["#{count}"] = {merchant: t.merchant.name, category: t.category.name, description: t.description, amount: t.amount}
+      count += 1
+    end
+    return json_hash
   end
 
-  def sort_merchant(order)
-    @transactions.sort! { |t1, t2| t1.merchant.name <=> t2.merchant.name} if order == "asc"
-    @transactions.sort! { |t1, t2| t2.merchant.name <=> t1.merchant.name} if order == "desc"
+
+
+  def filter_tagged(category_id)
+    # @transactions_tagged = @transactions.select {|t| t.}   
   end
 
-  def sort_category(order)
-    @transactions.sort! { |t1, t2| t1.category.name <=> t2.category.name} if order == "asc"
-    @transactions.sort! { |t1, t2| t2.category.name <=> t1.category.name} if order == "desc"
+  def sort(params) # => needs refactoring even more
+    case params["sort_by"]
+    when "amount"
+      @transactions.sort! { |t1, t2| t1.amount <=> t2.amount} if params["order"] == "asc"
+      @transactions.sort! { |t1, t2| t2.amount <=> t1.amount} if params["order"] == "desc"
+    when "merchant"
+      @transactions.sort! { |t1, t2| t1.merchant.name <=> t2.merchant.name} if params["order"] == "asc"
+      @transactions.sort! { |t1, t2| t2.merchant.name <=> t1.merchant.name} if params["order"] == "desc"
+    when "category"
+      @transactions.sort! { |t1, t2| t1.category.name <=> t2.category.name} if params["order"] == "asc"
+      @transactions.sort! { |t1, t2| t2.category.name <=> t1.category.name} if params["order"] == "desc"
+    end
+
+    # @transactions.sort! { |t1, t2| t1.sort_by <=> t2.sort_by} if order == "asc"
+    # @transactions.sort! { |t1, t2| t2.sort_by <=> t1.sort_by} if order == "desc"
+    
   end
+
+  # => old sorting with 3 methods
+
+  # def sort_amount(order)
+  #   @transactions.sort! { |t1, t2| t1.amount <=> t2.amount} if order == "asc"
+  #   @transactions.sort! { |t1, t2| t2.amount <=> t1.amount} if order == "desc"
+  # end
+
+  # def sort_merchant(order)
+  #   @transactions.sort! { |t1, t2| t1.merchant.name <=> t2.merchant.name} if order == "asc"
+  #   @transactions.sort! { |t1, t2| t2.merchant.name <=> t1.merchant.name} if order == "desc"
+  # end
+
+  # def sort_category(order)
+  #   @transactions.sort! { |t1, t2| t1.category.name <=> t2.category.name} if order == "asc"
+  #   @transactions.sort! { |t1, t2| t2.category.name <=> t1.category.name} if order == "desc"
+  # end
 
   def total
     return @transactions.inject(0) { |sum, t| sum + t.amount()}

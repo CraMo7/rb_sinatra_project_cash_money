@@ -10,10 +10,11 @@ class Transaction
 
   def initialize(params)
     @id = params["id"].to_i if params["id"]
-    @description = params["description"]
+    @description = params["description"].capitalize!
     @amount = params["amount"].to_f
     @merchant_id = params["merchant_id"]
     @category_id =  params["category_id"]
+    # @transaction_date = params["transaction_date"]
   end
 
   def merchant
@@ -39,7 +40,7 @@ class Transaction
     # # if not_preexisting
     # exists = !check_exists_sql_return.ntuples.zero?
     # unless exists
-      query_add_transaction = "INSERT INTO transactions (description, amount, merchant_id, category_id) VALUES ('#{params["description"]}', #{params["amount"]}, '#{params["merchant_id"]}', '#{params["category_id"]}') RETURNING *;"
+      query_add_transaction = "INSERT INTO transactions (description, amount, merchant_id, category_id) VALUES ('#{params["description"]}', #{params["amount"]}, #{params["merchant_id"]}, #{params["category_id"]}) RETURNING *;"
       sql_return = Sql.run(query_add_transaction)
       return Transaction.new(sql_return[0])
     # else

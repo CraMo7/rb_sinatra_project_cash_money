@@ -1,0 +1,40 @@
+<div class="box">
+<h3>Edit Transaction</h3>
+<form action="/transactions" method="put">
+  <!-- <div class="label_input_pair"> -->
+  <label for="merchant">Merchant:</label>
+  <select name="merchant">
+    <% @analysis.merchants.each do |merchant|%>
+    <option value="<%= merchant.name.downcase %>" <%= selected if merchant.id == @transaction.merchant_id %> > <%= merchant.name %></option>
+    <% end %>
+  </select>
+  <span title="Add Merchant"><a href="/merchants/new"><img class="icon" src="/add_plus.png" alt="+"></a></span>
+  <!-- </div> -->
+
+  <!-- <div class="label_input_pair"> -->
+  <label for="category">Category:</label>
+  <select name="category">
+    <% @analysis.categories.each do |category|%>
+      <option value="<%= category.name.downcase %>"><%= category.name %></option>
+    <% end %>
+  </select>
+  <span title="Add Category"><a href="/categories/new"><img class="icon" src="/add_plus.png" alt="+"></a></span>
+  <!-- </div> -->
+
+  <!-- <div class="label_input_pair"> -->
+  <label for="description">Description&nbsp(optional):</label><input type="text" name="description" autofocus>
+  <!-- </div> -->
+  <!-- <div class="label_input_pair"> -->
+  <label for="amount">Amount:</label><input type="number" step="0.01" name="amount">
+  <!-- </div> -->
+  <input type="submit" value="Update Transaction">
+</form>
+</div>
+<hr>
+<div class="box">
+<%= erb(:"merchant/new") %>
+</div>
+
+<div class="box">
+<%= erb(:"category/new") %>
+</div>

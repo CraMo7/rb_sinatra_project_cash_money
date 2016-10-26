@@ -1,0 +1,13 @@
+<div class="box">
+<h3>Add new Merchant</h3>
+<form action="/merchants" method="post">
+  <label for="name">Merchant:</label><input type="text" name="name" autofocus>
+<!--   <label for="default_category"></label>
+  <select name="default_category">
+    <percentsignheretouncomment @analysis.categories.each do |category|%>
+      <option value="<percentequalsheretouncomment category.name.downcase %>"><percentequalsheretouncomment category.name %></option>
+    <percentsignheretouncomment #end %>
+  </select> -->
+  <input type="submit" value="Create Merchant">
+</form>
+</div>

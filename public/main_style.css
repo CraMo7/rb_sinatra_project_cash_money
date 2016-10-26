@@ -1,67 +1,195 @@
 html {
   background: url(/monochrome_money.jpg) no-repeat center center fixed;
   background-size: cover;
-
+  font-family: "Ubuntu", sans-serif;
 }
+
+/*light green: #8cbb65*/
+/*dark dark green for text on light green: #314c21*/
+header {
+  width: 85%;
+  margin: 2% auto;
+}
+
+.box {
+  display: inline-block;
+  margin: 4px;
+  padding: 8px;
+  background-color: #666;
+  box-shadow: 0px 0px 40px 8px rgba(102,102,102,1);
+  border-radius: 2px 14px;
+}
+
+img.icon {
+  height: 16px;
+  width: 16px;
+  background-color: #FFF;
+  border-radius: 10%;
+  padding:2px;
+}
+
+p {
+  color: #FFF;
+}
+
+
+
+
+
+/*this was an attempt to stop line breaks splitting labels and the input element which they label - it failed*/
+/*.label_input_pair {
+  display: inline;
+}
+
+.label_input_pair label, .label_input_pair input {
+  display: inline-block;
+}*/
+
+.content {
+  width: 85%;
+  margin: 2% auto;
+  /*background-color: #666;*/
+  /*padding: 2%;*/
+  /*border-radius: 2%;*/
+  /*box-shadow: 0px 0px 25px 0px rgba(66,66,66,1);*/
+}
+label, input {
+  padding: 4px;
+  margin: 4px;
+}
+label {
+  color: #FFF;
+}
+
+/** {
+  box-sizing: border-box;
+}*/
+
 
 a {
   text-decoration: none;
-  color: #A0A;
+  color: #FFF;
 }
 
-h2 {
-  color: #0F0;
+a:hover {
+  color: #000;
 }
 
-h3 {
-  color: #00F;
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+h2, h3, h4 {
+  margin: 0;
+  padding: 8px;
+  color: #FFF;
+}
+
+li {
+  margin: 0;
+  background-color: #666;
+  border-radius: 2px 14px;
+  display: inline-block;
+  padding: 5px;
 }
 
 /*original "dollar green colour: #85bb65*/
-/* light: #8cbb65*/
+/* light: #666*/
 /*deep brighter: #6ba449*/
 /*deep dark: #486f31*/
 /*nearing black: #314c21*/
+/*pretty much black: #1a2812*/
 
-.table {
+div.table_wrapper {
+  background-color: #FFF;
   width: 90%;
   margin: 2.5% 5%;
-  background-color: #8cbb65;
+  border-radius: 4%;
+  padding: 1%;
 }
+
+table, table a {
+  color: #FFF;
+  border-collapse: collapse;
+}
+
+td {
+    background-clip: padding-box
+}
+
 thead {
-  border: 2px solid #A0A;
-  border-bottom: none;
+  /*border: 2px solid black;*/
+  border: 1px solid grey;
+  background-color: #666;
 }
 
-thead, thead a {
-  color: #314c21;
+thead th {
+  padding: 2px;
+  text-align: center;
+  border: 1px solid grey;
 }
-
+/*table body*/
 tbody {
-  border: 2px solid black;
-  border-top: none;
+  background-color: #666;
+  border: 1px solid grey;
+  /*border: 2px solid black;*/
+  /*border-top: none;*/
 }
 
-tbody, tbody a {
-  color: #314c21;
-}
-
-th, td {
+tbody td {
   border: 1px solid grey;
   padding: 2px;
   text-align: center;
 }
 
 
-td.total_label {
-  text-align: right;
-  padding: 3px;
+/*table footer*/
+
+tfoot td.total {
+  background-color: #666;
+  padding: 2px;
+  text-align: center;
+  margin: 0;
+  border: 1px solid grey;
+  /*border-top-style: none;*/
+  /*border-bottom: 2px solid black;*/
+  /*height: 25px;*/
+}
+tfoot td#total_display{
+  /*border-left: -1px solid grey;*/
+/*  border-right: 2px solid black;
+  border-bottom: 2px solid black;*/
+  border-left: 1px solid grey;
+  /*float:right;*/
+  /*border-bottom: 2px solid black;*/
+
 }
 
-td.total_display {
-  padding: 3px;
+tfoot td#total_label {
+/*  border-left: 2px solid black;
+  border-bottom: 2px solid black;*/
+
+  /*border-bottom: 2px solid black;*/
+  /*border-bottom-style: outset;*/
+  /*border-right: 1px solid grey;*/
+  /*display: inline-block;*/
+  /*padding-bottom: 2px;*/
+  /*relative  The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position*/
+  position: relative;
+  left: 1px;
+  /*top: 1px;*/
+  float:right;
+  /*padding: 2px;*/
 }
 
-.table {
-  background-color: ;
+td.add_transaction {
+  /*float: right;*/
+}
+
+ul {
+  list-style: none;
+}
+ul a {
+  color 
 }

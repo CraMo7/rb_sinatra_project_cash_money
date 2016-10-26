@@ -1,0 +1,13 @@
+<div class="box">
+<h3>View Transaction</h3>
+<p>Merchant: <%= @transaction.merchant.name %></p>
+<p>Category: <%= @transaction.category.name %></p>
+<p>Description: <%= @transaction.description %></p>
+<p>Amount: <%= @transaction.amount %></p>
+</div>
+
+<hr>
+
+<div class="box">
+<a href="/transactions/new">Add a Transaction</a>
+</div>
