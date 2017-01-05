@@ -10,6 +10,25 @@ Over the next week you have the chance to consolidate and exapnd on everything y
 
 Your assignment is an opportunity to practice all or some of these principles. Next Thursday you can do a short presentation on what you have achieved and learned.
 
+## MoneyCashboard
+
+You want to start tracking your spending in an attempt to be more frugal with money.
+
+You must be able to create new Transactions ( which should include merchant name e.g. Tesco and value ) which has an associated Tag (e.g. ‘food’). It would then be able to track a total. Your Account could then be displayed in a view.
+
+Suggested MVP:
+
+- Create new transactions
+- Display all transactions
+- Display total expenditure
+- Display total expenditure by tag
+
+Your app could:
+
+- CRUD actions for the transations
+- Create route that sends down Account data as JSON
+
+
 ## Keith's Music Store
 
 The owner of Keith’s Music Store, Keith, wants an app which will help him keep on top of his store inventory. He does not want an app that customers will see, but he will use to check stock levels, see what he needs to order soon and what is in stock.
@@ -31,23 +50,6 @@ Any further analysis would be appreciated but not required, for example:
 - Search functionality on Inventory page
 - Associated Genre (Keith associates one Genre to Artists)
 
-## MoneyCashboard
-
-You want to start tracking your spending in an attempt to be more frugal with money.
-
-You must be able to create new Transactions ( which should include merchant name e.g. Tesco and value ) which has an associated Tag (e.g. ‘food’). It would then be able to track a total. Your Account could then be displayed in a view.
-
-Suggested MVP:
-
-- Create new transactions
-- Display all transactions
-- Display total expenditure
-- Display total expenditure by tag
-
-Your app could:
-
-- CRUD actions for the transations
-- Create route that sends down Account data as JSON
 
 ## Rio Olympics 2016
 
